@@ -3,7 +3,7 @@
  * на сервер.
  * */
 const createRequest = (options = {}) => {
-
+debugger;
     let request = new XMLHttpRequest();
     request.withCredentials = true;
     request.responseType = options.responseType;
@@ -33,9 +33,6 @@ const createRequest = (options = {}) => {
                         let err = null;
                         let response = request.response;
                         options.callback(err, response);
-                    } else {
-                        let err = request.status;
-                        options.callback(err);
                     }
                 });
             }
@@ -48,10 +45,10 @@ const createRequest = (options = {}) => {
         let formData = new FormData();
         let data = options.data;
 
-        formData.append( 'mail', data.mail);
+        formData.append( 'email', data.email);
         formData.append( 'password', data.password);
-    try {
 
+    try {
         request.open(options.method, options.url, true);
         request.send(formData);
         request.addEventListener('readystatechange', () => {
@@ -60,14 +57,12 @@ const createRequest = (options = {}) => {
                 let err = null;
                 let response = request.response;
                 options.callback(err, response);
-            } else {
-                let err = request.status;
-                options.callback(err);
             }
 
         });
     } catch (e) {
-        options.callback( e );
+        options.callback(e);
+
     }
 
     }

@@ -60,7 +60,12 @@ class AccountsWidget {
   update() {
     let user = User.current();
     if (user) {
-      Account.list();
+      Account.list({}, (err, response) => {
+        if (response.success) {
+          this.clear();
+          this.renderItem(response.data);
+        }
+      });
     }
   }
 

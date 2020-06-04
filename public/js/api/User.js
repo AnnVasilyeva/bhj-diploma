@@ -58,6 +58,7 @@ class User {
         if(response && response.success) {
           this.setCurrent(response.user);
         }
+        callback( err, response );
       }
     });
   }
@@ -74,6 +75,7 @@ class User {
         if(response && response.user) {
           this.setCurrent(response.user);
         }
+        callback( err, response );
       }
     });
   }
@@ -88,6 +90,7 @@ class User {
         if(response && response.user) {
           this.unsetCurrent();
         }
+        callback( err, response );
       }
     });
   }
