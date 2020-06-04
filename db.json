@@ -30,7 +30,7 @@
     {
       "password": "12345",
       "id": "a5s31q93kazrw4vp",
-      "isAuthorized": true
+      "isAuthorized": false
     },
     {
       "password": "1567",
@@ -130,6 +130,12 @@
     {
       "password": "123",
       "id": "a5s31rbnkb0rd6w6",
+      "isAuthorized": true
+    },
+    {
+      "email": "sk@test.ru",
+      "password": "12345678",
+      "id": "a5s31rodkb0w79jn",
       "isAuthorized": true
     }
   ],

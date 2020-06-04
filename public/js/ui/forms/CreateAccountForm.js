@@ -15,13 +15,11 @@ class CreateAccountForm extends AsyncForm {
     Account.create(options.data, (err, response) => {
 
       if (response && response.success) {
-
         this.element.reset();
+        App.update();
 
         const modalWindow = App.getModal('createAccount');
         modalWindow.close();
-
-        App.update();
       }
     })
   }

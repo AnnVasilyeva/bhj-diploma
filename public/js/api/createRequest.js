@@ -3,7 +3,7 @@
  * на сервер.
  * */
 const createRequest = (options = {}) => {
-debugger;
+
     let request = new XMLHttpRequest();
     request.withCredentials = true;
     request.responseType = options.responseType;
@@ -42,6 +42,7 @@ debugger;
         }
 
     } else {
+        debugger;
         let formData = new FormData();
         let data = options.data;
 

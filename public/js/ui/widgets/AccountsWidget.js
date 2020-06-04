@@ -14,7 +14,7 @@ class AccountsWidget {
    * */
   constructor( element ) {
     if (!element) {
-      throw new Error('Ошибка, элемент пустой!');
+      throw new Error('Ошибка!');
     }
     this.element = element;
     this.registerEvents();
@@ -29,6 +29,7 @@ class AccountsWidget {
    * вызывает AccountsWidget.onSelectAccount()
    * */
   registerEvents() {
+
     const createAccount = this.element.querySelector('.create-account ');
     const accountArr = this.element.querySelectorAll('.account');
 
@@ -60,12 +61,14 @@ class AccountsWidget {
   update() {
     let user = User.current();
     if (user) {
-      Account.list({}, (err, response) => {
+      Account.list(user, (err, response) => {
         if (response.success) {
           this.clear();
           this.renderItem(response.data);
         }
       });
+    } else {
+      return;
     }
   }
 
@@ -75,7 +78,8 @@ class AccountsWidget {
    * в боковой колонке
    * */
   clear() {
-
+    const accountArr = this.element.querySelectorAll('.account');
+    accountArr.forEach(item => item.remove());
   }
 
   /**
@@ -86,7 +90,13 @@ class AccountsWidget {
    * Вызывает App.showPage( 'transactions', { account_id: id_счёта });
    * */
   onSelectAccount( element ) {
-
+    let elementParent = element.closest('.accounts-panel');
+    let elementArr = elementParent.querySelectorAll('.active');
+    if (elementArr.length > 0) {
+      elementArr.forEach(item => item.classList.remove('.active'));
+    }
+    element.classList.add('active');
+    App.showPage( 'transactions', { account_id: id_счёта });
   }
 
   /**
@@ -95,7 +105,12 @@ class AccountsWidget {
    * item - объект с данными о счёте
    * */
   getAccountHTML( item ) {
-
+     return `<li class="active account" data-id="${item.id}">
+                <a href="#">
+                 <span>${item.name}</span> /
+                 <span>${item.sum} ₽</span>
+                </a>
+            </li>`;
   }
 
   /**
@@ -105,6 +120,7 @@ class AccountsWidget {
    * и добавляет его внутрь элемента виджета
    * */
   renderItem( item ) {
-
+    let accountHTML = this.getAccountHTML( item );
+    this.element.insertAdjacentHTML('beforeend', accountHTML);
   }
 }
