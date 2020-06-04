@@ -13,6 +13,11 @@ class Modal {
    * необходимо выкинуть ошибку.
    * */
   constructor( element ) {
+    if (!element) {
+      throw new Error('Ошибка, элемент пустой!');
+    }
+    this.element = element;
+    this.registerEvents();
 
   }
 
@@ -22,7 +27,10 @@ class Modal {
    * (с помощью метода Modal.onClose)
    * */
   registerEvents() {
-
+    this.closeBtnArr = this.element.querySelectorAll('button[data-dismiss="modal"]');
+    for (let closeBtn of this.closeBtnArr) {
+      closeBtn.addEventListener('click', (e) => this.onClose(e));
+    }
   }
 
   /**
@@ -30,25 +38,30 @@ class Modal {
    * Закрывает текущее окно (Modal.close())
    * */
   onClose( e ) {
-
+    e.preventDefault();
+    this.close();
   }
   /**
    * Удаляет обработчики событий
    * */
   unregisterEvents() {
-
+    for (let closeBtn of this.closeBtnArr) {
+      closeBtn.removeEventListener('click', (e) => this.onClose(e));
+    }
   }
+
   /**
    * Открывает окно: устанавливает CSS-свойство display
    * со значением «block»
    * */
   open() {
+    this.element.style.display = 'block';
 
   }
   /**
    * Закрывает окно: удаляет CSS-свойство display
    * */
-  close(){
-
+  close() {
+    this.element.style.display = '';
   }
 }
