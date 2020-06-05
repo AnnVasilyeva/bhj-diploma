@@ -9,64 +9,51 @@ const createRequest = (options = {}) => {
     request.responseType = options.responseType;
 
     if (options.method === 'GET') {
-        let url, mail, password;
-
-        for (let key in options.data) {
-            if (key === 'mail') {
-                mail = key + '=' + options.data[key];
-            }
-            if (key === 'password') {
-                password = key + '=' + options.data[key];
-            }
-            if (mail && password) {
-                url = options.url + '?' + mail + '&' + password;
+        let url = options.url;
+        if (options.data) {
+            url += '?';
+            let data = options.data;
+            for (let key in data) {
+                url += key + '=' + data[key] + '&';
+                url = url.slice(0,-1);
             }
         }
+
         try {
-            if(url != undefined) {
+            if(url) {
                 request.open(options.method, url, true);
                 request.send();
-
-                request.addEventListener('readystatechange', () => {
-
-                    if (request.readyState === request.DONE && request.status === 200) {
-                        let err = null;
-                        let response = request.response;
-                        options.callback(err, response);
-                    }
-                });
             }
-
         } catch (e) {
             options.callback( e );
         }
 
     } else {
-        debugger;
-        let formData = new FormData();
-        let data = options.data;
 
-        formData.append( 'email', data.email);
-        formData.append( 'password', data.password);
+        let formData = new FormData();
+
+        for (let key in options.data) {
+            formData.append( key, options.data[key]);
+        }
 
     try {
         request.open(options.method, options.url, true);
         request.send(formData);
-        request.addEventListener('readystatechange', () => {
 
-            if (request.readyState === request.DONE && request.status === 200) {
-                let err = null;
-                let response = request.response;
-                options.callback(err, response);
-            }
-
-        });
     } catch (e) {
         options.callback(e);
-
     }
 
     }
+    request.addEventListener('readystatechange', () => {
+
+        if (request.readyState === request.DONE && request.status === 200) {
+            let err = null;
+            let response = request.response;
+            options.callback(err, response);
+        }
+
+    });
 
     return request;
 };

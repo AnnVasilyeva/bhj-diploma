@@ -34,14 +34,13 @@ class AccountsWidget {
     const accountArr = this.element.querySelectorAll('.account');
 
     createAccount.addEventListener('click', (e) => {
+      e.preventDefault();
       let newAccount  = App.getModal('createAccount');
       newAccount.open();
 
       if (accountArr.length > 0) {
         for (let item in accountArr) {
-          item.addEventListener('click', (e) => {
-            this.onSelectAccount(item);
-          });
+          item.addEventListener('click', (e) => this.onSelectAccount(item));
         }
       }
 
@@ -60,11 +59,13 @@ class AccountsWidget {
    * */
   update() {
     let user = User.current();
+
     if (user) {
+
       Account.list(user, (err, response) => {
         if (response.success) {
           this.clear();
-          this.renderItem(response.data);
+          response.data.forEach((item) => this.renderItem(item));
         }
       });
     } else {
@@ -96,7 +97,9 @@ class AccountsWidget {
       elementArr.forEach(item => item.classList.remove('.active'));
     }
     element.classList.add('active');
-    App.showPage( 'transactions', { account_id: id_счёта });
+    let id = element.dataset.id;
+
+    App.showPage( 'transactions', { account_id: id });
   }
 
   /**
@@ -121,6 +124,6 @@ class AccountsWidget {
    * */
   renderItem( item ) {
     let accountHTML = this.getAccountHTML( item );
-    this.element.insertAdjacentHTML('beforeend', accountHTML);
+    this.element.insertAdjacentHTML('beforeEnd', accountHTML);
   }
 }

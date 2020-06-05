@@ -28,7 +28,7 @@ class UserWidget {
     let user = User.current();
     if (user) {
       let userName = this.element.querySelector('.user-name');
-      userName.textAlign = user.name;
+      userName.textContent = user.name;
     }
   }
 }

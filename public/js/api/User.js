@@ -26,7 +26,7 @@ class User {
    * из локального хранилища
    * */
   static current() {
-    return localStorage.user;
+    return JSON.parse(localStorage.getItem('user'));
   }
 
   /**
@@ -34,12 +34,15 @@ class User {
    * авторизованном пользователе.
    * */
   static fetch( data, callback = f => f ) {
-    return createRequest({data, method: 'GET', url: this.URL + '/current', responseType: 'json',
+
+    return createRequest({data: data, method: 'GET', url: this.URL + '/current', responseType: 'json',
       callback: (err, response) => {
+      console.log(data);
+      console.log(response);
         if(response && response.user) {
           this.setCurrent(response.user);
         } else {
-          this.unsetCurrent();
+          // this.unsetCurrent();  //закомментировала потому что не работет пока не решу проблему с ответом на запрос
         }
         callback( err, response );
       }

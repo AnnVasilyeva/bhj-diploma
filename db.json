@@ -35,17 +35,17 @@
     {
       "password": "1567",
       "id": "a5s31qabkazryq0r",
-      "isAuthorized": true
+      "isAuthorized": false
     },
     {
       "password": "1567",
       "id": "a5s31qapkazrzfhj",
-      "isAuthorized": true
+      "isAuthorized": false
     },
     {
       "password": "1567",
       "id": "a5s31qaykazs19bv",
-      "isAuthorized": true
+      "isAuthorized": false
     },
     {
       "password": "12345",
@@ -137,6 +137,20 @@
       "password": "12345678",
       "id": "a5s31rodkb0w79jn",
       "isAuthorized": true
+    },
+    {
+      "name": "Ann",
+      "email": "ska@test.ru",
+      "password": "123",
+      "id": "a5s31t7zkb1wr4ji",
+      "isAuthorized": true
+    },
+    {
+      "name": "Ann",
+      "email": "skazka@test.ru",
+      "password": "123",
+      "id": "a5s31t8rkb1wyryw",
+      "isAuthorized": true
     }
   ],
   "accounts": [
@@ -154,6 +168,111 @@
       "name": "Бизнес",
       "user_id": "1",
       "id": "3"
+    },
+    {
+      "name": "Сбербанк",
+      "user_id": "a5s31qabkazryq0r",
+      "id": "a5s31si9kb15vq4t"
+    },
+    {
+      "name": "Сбербанк",
+      "user_id": "a5s31qabkazryq0r",
+      "id": "a5s31siikb15wa0v"
+    },
+    {
+      "name": "Сбербанк",
+      "user_id": "a5s31qabkazryq0r",
+      "id": "a5s31sj1kb15xlrn"
+    },
+    {
+      "name": "Сбербанк",
+      "user_id": "a5s31qabkazryq0r",
+      "id": "a5s31sjdkb15zkwr"
+    },
+    {
+      "name": "Сбербанк",
+      "user_id": "a5s31qabkazryq0r",
+      "id": "a5s31sl8kb16jg8v"
+    },
+    {
+      "name": "Сбербанк",
+      "user_id": "a5s31qabkazryq0r",
+      "id": "a5s31slbkb16jw0d"
+    },
+    {
+      "name": "Сбербанк",
+      "user_id": "a5s31qabkazryq0r",
+      "id": "a5s31sm2kb16ot16"
+    },
+    {
+      "name": "Сбербанк",
+      "user_id": "a5s31qabkazryq0r",
+      "id": "a5s31sqlkb1tqmi0"
+    },
+    {
+      "name": "Сбербанк",
+      "user_id": "a5s31qabkazryq0r",
+      "id": "a5s31srokb1tthlk"
+    },
+    {
+      "name": "Сбербанк",
+      "user_id": "a5s31qabkazryq0r",
+      "id": "a5s31stlkb1u52t7"
+    },
+    {
+      "name": "Сбербанк",
+      "user_id": "a5s31qabkazryq0r",
+      "id": "a5s31su6kb1u6lwy"
+    },
+    {
+      "name": "Сбербанк",
+      "user_id": "a5s31qabkazryq0r",
+      "id": "a5s31sukkb1u7hht"
+    },
+    {
+      "name": "Сбербанк",
+      "user_id": "a5s31qabkazryq0r",
+      "id": "a5s31suxkb1uauzi"
+    },
+    {
+      "name": "Сбербанк",
+      "user_id": "a5s31qabkazryq0r",
+      "id": "a5s31svckb1ud6g4"
+    },
+    {
+      "name": "Сбербанк",
+      "user_id": "a5s31qabkazryq0r",
+      "id": "a5s31swikb1ujmgs"
+    },
+    {
+      "name": "Сбербанк",
+      "user_id": "a5s31qabkazryq0r",
+      "id": "a5s31swzkb1ulio4"
+    },
+    {
+      "name": "Сбербанк",
+      "user_id": "a5s31qabkazryq0r",
+      "id": "a5s31sy1kb1uqgcs"
+    },
+    {
+      "name": "Сбербанк",
+      "user_id": "a5s31qabkazryq0r",
+      "id": "a5s31t6skb1wb82m"
+    },
+    {
+      "name": "Сбербанк",
+      "user_id": "a5s31qeikazsk61u",
+      "id": "a5s31tt2kb1zljwn"
+    },
+    {
+      "name": "Наличные",
+      "user_id": "a5s31qeikazsk61u",
+      "id": "a5s31u8lkb28w0kx"
+    },
+    {
+      "name": "Альфабанк",
+      "user_id": "a5s31qeikazsk61u",
+      "id": "a5s31ujkkb2awp2w"
     }
   ],
   "transactions": [
@@ -291,6 +410,78 @@
       "sum": 300000,
       "type": "expense",
       "user_id": "1"
+    },
+    {
+      "id": "a5s31uakkb29hf3h",
+      "type": "INCOME",
+      "name": "food",
+      "sum": 1000,
+      "account_id": "a5s31u8lkb28w0kx",
+      "created_at": "2020-06-05T13:45:49.228Z"
+    },
+    {
+      "id": "a5s31ub9kb29ja7x",
+      "type": "INCOME",
+      "name": "food",
+      "sum": 1000,
+      "account_id": "a5s31tt2kb1zljwn",
+      "created_at": "2020-06-05T13:47:16.220Z"
+    },
+    {
+      "id": "a5s31ubrkb29o0qm",
+      "type": "INCOME",
+      "name": "food",
+      "sum": 1000,
+      "account_id": "a5s31u8lkb28w0kx",
+      "created_at": "2020-06-05T13:50:57.213Z"
+    },
+    {
+      "id": "a5s31uc7kb29qykg",
+      "type": "EXPENSE",
+      "name": "food",
+      "sum": 1000,
+      "account_id": "a5s31u8lkb28w0kx",
+      "created_at": "2020-06-05T13:53:14.367Z"
+    },
+    {
+      "id": "a5s31ucdkb29r7hw",
+      "type": "INCOME",
+      "name": "food",
+      "sum": 1000,
+      "account_id": "a5s31tt2kb1zljwn",
+      "created_at": "2020-06-05T13:53:25.939Z"
+    },
+    {
+      "id": "a5s31ucrkb29tzc8",
+      "type": "EXPENSE",
+      "name": "food",
+      "sum": 1000,
+      "account_id": "a5s31u8lkb28w0kx",
+      "created_at": "2020-06-05T13:55:35.335Z"
+    },
+    {
+      "id": "a5s31ucwkb29ug0o",
+      "type": "INCOME",
+      "name": "зарплата",
+      "sum": 1000,
+      "account_id": "a5s31tt2kb1zljwn",
+      "created_at": "2020-06-05T13:55:56.951Z"
+    },
+    {
+      "id": "a5s31ud3kb29ux4n",
+      "type": "EXPENSE",
+      "name": "food",
+      "sum": 1000,
+      "account_id": "a5s31tt2kb1zljwn",
+      "created_at": "2020-06-05T13:56:19.126Z"
+    },
+    {
+      "id": "a5s31ud6kb29v6df",
+      "type": "EXPENSE",
+      "name": "food",
+      "sum": 1000,
+      "account_id": "a5s31u8lkb28w0kx",
+      "created_at": "2020-06-05T13:56:31.106Z"
     }
   ]
 }

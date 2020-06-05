@@ -11,7 +11,11 @@ class TransactionsPage {
    * через registerEvents()
    * */
   constructor( element ) {
-
+    if (!element) {
+      throw new Error('Ошибка!');
+    }
+    this.element = element;
+    this.registerEvents();
   }
 
   /**
@@ -28,6 +32,19 @@ class TransactionsPage {
    * TransactionsPage.removeAccount соответственно
    * */
   registerEvents() {
+    // let removeAccount = this.element.querySelector('.remove-account');
+    // let transactionRemove = this.element.querySelector('.transaction__remove');
+    // // let id = transactionRemove.dataset.id;
+    //
+    //
+    // removeAccount.addEventListener('click', (e) => {
+    //   e.preventDefault();
+    //   this.removeAccount();
+    // });
+    // transactionRemove.addEventListener('click', (e) => {
+    //   e.preventDefault();
+    //   // this.removeTransaction(id);
+    // });
 
   }
 
