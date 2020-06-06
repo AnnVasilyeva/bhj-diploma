@@ -15,8 +15,8 @@ const createRequest = (options = {}) => {
             let data = options.data;
             for (let key in data) {
                 url += key + '=' + data[key] + '&';
-                url = url.slice(0,-1);
             }
+            url = url.slice(0,-1);
         }
 
         try {
@@ -37,6 +37,7 @@ const createRequest = (options = {}) => {
         }
 
     try {
+
         request.open(options.method, options.url, true);
         request.send(formData);
 

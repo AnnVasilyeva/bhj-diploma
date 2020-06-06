@@ -50,12 +50,12 @@
     {
       "password": "12345",
       "id": "a5s31qeikazsk61u",
-      "isAuthorized": true
+      "isAuthorized": false
     },
     {
       "password": "9876",
       "id": "a5s31qewkazsn1hi",
-      "isAuthorized": true
+      "isAuthorized": false
     },
     {
       "password": "123456",
@@ -273,6 +273,11 @@
       "name": "Альфабанк",
       "user_id": "a5s31qeikazsk61u",
       "id": "a5s31ujkkb2awp2w"
+    },
+    {
+      "name": "ann",
+      "user_id": "a5s31qo1kb0jq5i7",
+      "id": "a5s31wumkb3wnbek"
     }
   ],
   "transactions": [
@@ -482,6 +487,78 @@
       "sum": 1000,
       "account_id": "a5s31u8lkb28w0kx",
       "created_at": "2020-06-05T13:56:31.106Z"
+    },
+    {
+      "id": "a5s31w6jkb3o4lz8",
+      "type": "INCOME",
+      "name": "зарплата",
+      "sum": 30000,
+      "account_id": "a5s31uqpkb2c1xyh",
+      "created_at": "2020-06-06T13:23:32.035Z"
+    },
+    {
+      "id": "a5s31w6okb3o4x62",
+      "type": "EXPENSE",
+      "name": "food",
+      "sum": 1000,
+      "account_id": "a5s31uqpkb2c1xyh",
+      "created_at": "2020-06-06T13:23:46.537Z"
+    },
+    {
+      "id": "a5s31wdzkb3oxq62",
+      "type": "EXPENSE",
+      "name": "food",
+      "sum": 1000,
+      "account_id": "a5s31uqpkb2c1xyh",
+      "created_at": "2020-06-06T13:46:10.489Z"
+    },
+    {
+      "id": "a5s31wsekb3w99pg",
+      "type": "INCOME",
+      "name": "зарплата",
+      "sum": 30000,
+      "account_id": "a5s31usvkb2crtho",
+      "created_at": "2020-06-06T17:11:06.339Z"
+    },
+    {
+      "id": "a5s31wttkb3wkrrn",
+      "type": "INCOME",
+      "name": "зарплата",
+      "sum": 30000,
+      "account_id": "a5s31wtqkb3wkktt",
+      "created_at": "2020-06-06T17:20:02.962Z"
+    },
+    {
+      "id": "a5s31x1ckb3xbb9r",
+      "type": "INCOME",
+      "name": "ann",
+      "sum": 1000,
+      "account_id": "a5s31wumkb3wnbek",
+      "created_at": "2020-06-06T17:40:41.294Z"
+    },
+    {
+      "id": "a5s31x1hkb3xbfd4",
+      "type": "INCOME",
+      "name": "ann",
+      "sum": 1000,
+      "account_id": "a5s31wumkb3wnbek",
+      "created_at": "2020-06-06T17:40:46.599Z"
+    },
+    {
+      "id": "a5s31x1kkb3xbidy",
+      "type": "INCOME",
+      "name": "ann",
+      "sum": 1000,
+      "account_id": "a5s31wumkb3wnbek",
+      "created_at": "2020-06-06T17:40:50.517Z"
+    },
+    {
+      "id": "a5s31x1nkb3xborx",
+      "type": "INCOME",
+      "name": "ann",
+      "sum": 1000,
+      "account_id": "a5s31wumkb3wnbek",
+      "created_at": "2020-06-06T17:40:58.796Z"
     }
   ]
 }

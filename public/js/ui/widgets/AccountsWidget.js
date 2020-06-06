@@ -17,6 +17,7 @@ class AccountsWidget {
       throw new Error('Ошибка!');
     }
     this.element = element;
+    this.currentAccountId = null;
     this.registerEvents();
     this.update();
   }
@@ -31,17 +32,17 @@ class AccountsWidget {
   registerEvents() {
 
     const createAccount = this.element.querySelector('.create-account ');
-    const accountArr = this.element.querySelectorAll('.account');
 
     createAccount.addEventListener('click', (e) => {
       e.preventDefault();
       let newAccount  = App.getModal('createAccount');
       newAccount.open();
+    });
 
-      if (accountArr.length > 0) {
-        for (let item in accountArr) {
-          item.addEventListener('click', (e) => this.onSelectAccount(item));
-        }
+    this.element.addEventListener('click', (e) => {
+      let item = e.target;
+      if (item.closest('.account')) {
+        this.onSelectAccount(item.closest('.account'));
       }
 
     });
@@ -91,15 +92,19 @@ class AccountsWidget {
    * Вызывает App.showPage( 'transactions', { account_id: id_счёта });
    * */
   onSelectAccount( element ) {
-    let elementParent = element.closest('.accounts-panel');
-    let elementArr = elementParent.querySelectorAll('.active');
-    if (elementArr.length > 0) {
-      elementArr.forEach(item => item.classList.remove('.active'));
+    if (this.currentAccountId) {
+      let account = this.element.querySelector(`.account[data-id="${this.currentAccountId}"]`);
+      if (account) {
+        account.classList.remove('active');
+      }
+      else {
+        this.currentAccountId = null;
+      }
     }
     element.classList.add('active');
-    let id = element.dataset.id;
+    this.currentAccountId = element.dataset.id;
 
-    App.showPage( 'transactions', { account_id: id });
+    App.showPage( 'transactions', { account_id: this.currentAccountId});
   }
 
   /**
@@ -108,7 +113,7 @@ class AccountsWidget {
    * item - объект с данными о счёте
    * */
   getAccountHTML( item ) {
-     return `<li class="active account" data-id="${item.id}">
+     return `<li class="account" data-id="${item.id}">
                 <a href="#">
                  <span>${item.name}</span> /
                  <span>${item.sum} ₽</span>
