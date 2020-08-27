@@ -529,36 +529,12 @@
       "created_at": "2020-06-06T17:20:02.962Z"
     },
     {
-      "id": "a5s31x1ckb3xbb9r",
+      "id": "sdcv1032kecywmq8",
       "type": "INCOME",
-      "name": "ann",
-      "sum": 1000,
+      "name": "зарплата",
+      "sum": 50000,
       "account_id": "a5s31wumkb3wnbek",
-      "created_at": "2020-06-06T17:40:41.294Z"
-    },
-    {
-      "id": "a5s31x1hkb3xbfd4",
-      "type": "INCOME",
-      "name": "ann",
-      "sum": 1000,
-      "account_id": "a5s31wumkb3wnbek",
-      "created_at": "2020-06-06T17:40:46.599Z"
-    },
-    {
-      "id": "a5s31x1kkb3xbidy",
-      "type": "INCOME",
-      "name": "ann",
-      "sum": 1000,
-      "account_id": "a5s31wumkb3wnbek",
-      "created_at": "2020-06-06T17:40:50.517Z"
-    },
-    {
-      "id": "a5s31x1nkb3xborx",
-      "type": "INCOME",
-      "name": "ann",
-      "sum": 1000,
-      "account_id": "a5s31wumkb3wnbek",
-      "created_at": "2020-06-06T17:40:58.796Z"
+      "created_at": "2020-08-27T15:34:18.127Z"
     }
   ]
 }

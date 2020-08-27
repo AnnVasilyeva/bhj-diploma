@@ -5,6 +5,7 @@
 Видеодемонстрация и описание (нажмите на изображение):
 
 [![BHJ Diploma](https://img.youtube.com/vi/zXOyBIajWsM/0.jpg)](https://www.youtube.com/watch?v=zXOyBIajWsM)
+[![Build status](https://ci.appveyor.com/api/projects/status/vpdigvjmlcaiv34o?svg=true)](https://ci.appveyor.com/project/AnnVasilyeva/bhj-diploma)
 
 
 Вам необходимо разработать приложение для 
